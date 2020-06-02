@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Experimenting</title>
+    <style>
+        body {
+            height: 100%;
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Demo Purposes only-->
+    <p>Decibel Meter Demo</p>
+    <button id="demo-btn" onclick="demo()">Demo!</button>
+    <button id="clear-btn" onclick="reset()">Reset</button>
+    <hr />
+    <script>
+        function reset() {
+            let dbMeter = document.querySelector('ex-db-meter');
+            dbMeter?.setAttribute('value', String(0));
+        }
+        function demo() {
+            let value = 0;
+            let dbMeter = document.querySelector('ex-db-meter');
+            dbMeter?.setAttribute('value', String(value));
+            let demoBtn = document.getElementById('demo-btn');
+            let clearBtn = document.getElementById('clear-btn');
+            demoBtn.disabled = true;
+            clearBtn.disabled = true;
+            let id = setInterval(() => {
+                dbMeter?.setAttribute('value', String(value += 1));
+                if (value >= 120) {
+                    demoBtn.disabled = false;
+                    clearBtn.disabled = false;
+                    clearInterval(id);
+                }
+            }, 100);
+        }
+    </script>
+
+<!--Web Component-->
+<ex-db-meter value="50"></ex-db-meter>
+
+</body>
+
+</html>

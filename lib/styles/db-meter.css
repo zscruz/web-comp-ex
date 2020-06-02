@@ -1,0 +1,38 @@
+.db-meter-value {
+    font-size: 48px;
+    font-weight: 300;
+    float: left;
+}
+
+.db-meter-units {
+    font-size: 24px;
+    float: left;
+    font-weight: 100;
+    margin-left: 8px;
+    margin-top: 22px;
+}
+
+.db-meter-container {
+    height: 45px;
+    clear: both;
+}
+
+.db-meter-mark-container {
+    float: left;
+}
+
+.db-meter-scale-mark {
+    width: 25px;
+    height: 35px;
+    border-radius: 8px;
+    margin-right: 2px;
+}
+
+.db-meter-scale-mark-value {
+    text-align: center;
+}
+
+.db-meter-scale-mark-value-large {
+    height: 50px;
+    margin-top: -7.5px;
+}
